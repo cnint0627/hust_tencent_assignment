@@ -1,0 +1,22 @@
+{
+  "cloudDBZoneName": "default",
+  "objectTypeName": "UserInfo",
+  "objects": [
+    {
+      "uid": "string1",
+      "phoneNumber": "",
+      "nickname": "string1",
+      "avatarUrl": "string1",
+      "createTime": 1732345457572,
+      "updateTime": 1732345457572
+    },
+    {
+      "uid": "string2",
+      "phoneNumber": "",
+      "nickname": "string2",
+      "avatarUrl": "string2",
+      "createTime": 1732345457572,
+      "updateTime": 1732345457572
+    }
+  ]
+}
