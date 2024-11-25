@@ -6,6 +6,7 @@ import { UserInfo } from '../common/UserInfo';
 import { UserService } from '../services/UserService';
 import { Settings } from '../common/Settings';
 import { SettingsService } from '../services/SettingsService';
+import cloud from '@hw-agconnect/cloud'
 
 @CustomDialog
 struct SettingsDialog {
@@ -180,7 +181,7 @@ struct AboutDialog {
         .justifyContent(FlexAlign.Center)
         .margin({ top: 40, bottom: 16 })
 
-        Text('运动记录')
+        Text('运动记录平台')
           .fontSize(24)
           .fontWeight(FontWeight.Bold)
           .margin({ bottom: 8 })
@@ -240,7 +241,7 @@ struct AboutDialog {
           .alignSelf(ItemAlign.Start)
           .margin({ bottom: 12 })
 
-        Text('运动记录是一款专注于帮助用户科学运动的应用。我们提供专业的运动数据记录和分析，让每一次运动都更有意义。\n\n始终以用户体验为核心，持续优化产品功能，致力于成为您的专属运动助手。')
+        Text('该产品是一款专注于帮助用户科学运动的应用。我们提供专业的运动数据记录和分析，让每一次运动都更有意义。\n\n始终以用户体验为核心，持续优化产品功能，致力于成为您的专属运动助手。')
           .fontSize(14)
           .fontColor('#666666')
           .lineHeight(24)
@@ -439,7 +440,7 @@ export struct ProfilePage {
 
   async logout(): Promise<void> {
     try {
-      await auth.signOut()
+      await cloud.auth().signOut()
       promptAction.showToast({
         message: '退出登录成功',
         duration: 2000

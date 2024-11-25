@@ -150,10 +150,11 @@ export struct WorkoutTrackingPage {
 
               if (result) {
                 // 上传至云存储默认实例
-                let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 };
+                let packOpts: image.PackingOption = { format: "image/jpeg", quality: 50 }
                 let file = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
                 const imagePackerApi: image.ImagePacker = image.createImagePacker();
-                imagePackerApi.packToFile(result.imagePixelMap, file.fd, packOpts)
+                // 注意文件写入的过程是异步的，需要等待执行完再上传，否则文件还没有写好上传的就是之前的cache
+                await imagePackerApi.packToFile(result.imagePixelMap, file.fd, packOpts);
 
                 let cloudPath = `snapshots/${Date.now()}.jpeg`
                 this.storage.upload({
