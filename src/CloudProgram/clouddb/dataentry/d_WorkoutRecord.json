@@ -1,0 +1,26 @@
+{
+  "cloudDBZoneName": "default",
+  "objectTypeName": "WorkoutRecord",
+  "objects": [
+    {
+      "uid": "",
+      "recordId": 1,
+      "workoutType": "string1",
+      "totalTime": 10,
+      "averageSpeed": 10.5,
+      "createTime": 1732474555511,
+      "snapshotUrl": "string1",
+      "totalDistance": 10.5
+    },
+    {
+      "uid": "",
+      "recordId": 2,
+      "workoutType": "string2",
+      "totalTime": 20,
+      "averageSpeed": 20.5,
+      "createTime": 1732474555511,
+      "snapshotUrl": "string2",
+      "totalDistance": 20.5
+    }
+  ]
+}
