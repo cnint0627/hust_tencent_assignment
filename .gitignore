@@ -3,3 +3,6 @@ build/
 out/
 .idea/
 node_modules/
+*.hap
+*.rar
+*.mp4
